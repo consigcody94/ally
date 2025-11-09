@@ -918,6 +918,10 @@ p {
         background-attachment: scroll;
     }
 
+    .page-hero {
+        padding-top: 7rem;
+    }
+
     .hero-buttons {
         flex-direction: column;
         align-items: stretch;
