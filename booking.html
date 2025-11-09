@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Request veteran-owned elite private security services from Alliance Operations FL. Schedule tactical security for your event or property.">
+    <title>Request Security Services - Alliance Operations</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/components.min.css">
+    <link rel="stylesheet" href="css/animations.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-logo">
+                <img src="https://i.imgur.com/afNV0QH.png" alt="Alliance Operations" class="logo-img">
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services/uniformed-guards.html">Uniformed Guards</a></li>
+                            <li><a href="services/executive-protection.html">Executive Protection</a></li>
+                            <li><a href="services/vehicle-patrol.html">Vehicle Patrol</a></li>
+                            <li><a href="services/plainclothes.html">Plainclothes Security</a></li>
+                            <li><a href="services/consulting.html">Security Consulting</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Event Security <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="events/corporate.html">Corporate Events</a></li>
+                            <li><a href="events/weddings.html">Weddings</a></li>
+                            <li><a href="events/concerts.html">Concerts & Festivals</a></li>
+                            <li><a href="events/sporting-events.html">Sporting Events</a></li>
+                            <li><a href="events/private-parties.html">Private Parties</a></li>
+                            <li><a href="events/vip-events.html">VIP Events</a></li>
+                            <li><a href="events/community-events.html">Community Events</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="booking.html" class="nav-link nav-cta active">Request Services</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="veteran-badge">
+                <span class="veteran-badge-text">VETERAN OWNED & OPERATED</span>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Request Security Services</h1>
+                <p class="page-subtitle">Fill out the form below and our veteran-led tactical team will contact you within 24 hours to discuss your security needs.</p>
+            </div>
+        </section>
+
+        <!-- Booking Form Section -->
+        <section class="booking-section section">
+            <div class="container">
+                <div class="booking-layout">
+                    <!-- Form -->
+                    <div class="booking-form-container">
+                        <form name="security-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="booking-form" id="booking-form">
+                            <input type="hidden" name="form-name" value="security-request">
+
+                            <!-- Honeypot for spam prevention -->
+                            <p class="hidden">
+                                <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                            </p>
+
+                            <div class="form-section">
+                                <h3 class="form-section-title">Contact Information</h3>
+
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Full Name <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" class="form-input" required>
+                                    <span class="form-error" id="name-error"></span>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Email Address <span class="required">*</span></label>
+                                        <input type="email" id="email" name="email" class="form-input" required>
+                                        <span class="form-error" id="email-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">Phone Number <span class="required">*</span></label>
+                                        <input type="tel" id="phone" name="phone" class="form-input" required>
+                                        <span class="form-error" id="phone-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3 class="form-section-title">Service Details</h3>
+
+                                <div class="form-group">
+                                    <label for="service-type" class="form-label">Service Type <span class="required">*</span></label>
+                                    <select id="service-type" name="service-type" class="form-select" required>
+                                        <option value="">Select a service</option>
+                                        <optgroup label="Security Services">
+                                            <option value="uniformed-guards">Uniformed Guard Services</option>
+                                            <option value="executive-protection">Executive Protection</option>
+                                            <option value="vehicle-patrol">Vehicle Patrol Services</option>
+                                            <option value="plainclothes">Plainclothes Security</option>
+                                            <option value="consulting">Security Consulting</option>
+                                        </optgroup>
+                                        <optgroup label="Event Security">
+                                            <option value="event-corporate">Corporate Event</option>
+                                            <option value="event-wedding">Wedding</option>
+                                            <option value="event-concert">Concert/Festival</option>
+                                            <option value="event-sporting">Sporting Event</option>
+                                            <option value="event-private">Private Party</option>
+                                            <option value="event-vip">VIP Event</option>
+                                            <option value="event-community">Community Event</option>
+                                        </optgroup>
+                                        <option value="other">Other (please specify in details)</option>
+                                    </select>
+                                    <span class="form-error" id="service-type-error"></span>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="date" class="form-label">Start Date <span class="required">*</span></label>
+                                        <input type="date" id="date" name="date" class="form-input" required>
+                                        <span class="form-error" id="date-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="time" class="form-label">Start Time <span class="required">*</span></label>
+                                        <input type="time" id="time" name="time" class="form-input" required>
+                                        <span class="form-error" id="time-error"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="location" class="form-label">Event/Property Location <span class="required">*</span></label>
+                                    <input type="text" id="location" name="location" class="form-input" placeholder="Full address or venue name" required>
+                                    <span class="form-error" id="location-error"></span>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="guards-needed" class="form-label">Number of Guards Needed <span class="required">*</span></label>
+                                        <input type="number" id="guards-needed" name="guards-needed" class="form-input" min="1" placeholder="1" required>
+                                        <span class="form-error" id="guards-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="duration" class="form-label">Duration (hours) <span class="required">*</span></label>
+                                        <input type="number" id="duration" name="duration" class="form-input" min="1" step="0.5" placeholder="4" required>
+                                        <span class="form-error" id="duration-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3 class="form-section-title">Additional Information</h3>
+
+                                <div class="form-group">
+                                    <label for="details" class="form-label">Additional Details</label>
+                                    <textarea id="details" name="details" class="form-textarea" rows="6" placeholder="Please provide any additional information about your security needs, special requirements, or concerns..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary btn-large">
+                                    <span class="btn-text">Submit Request</span>
+                                    <span class="btn-loader hidden">
+                                        <i class="fas fa-spinner fa-spin"></i> Sending...
+                                    </span>
+                                </button>
+                                <p class="form-note">By submitting this form, you agree to be contacted by Alliance Operations regarding your security request.</p>
+                            </div>
+                        </form>
+
+                        <!-- Success Message (hidden by default) -->
+                        <div class="success-message hidden" id="success-message">
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3 class="success-title">Request Submitted Successfully!</h3>
+                            <p class="success-text">Thank you for contacting Alliance Operations. We've received your security request and will contact you within 24 hours to discuss your needs.</p>
+                            <a href="index.html" class="btn btn-outline">Return to Homepage</a>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Info -->
+                    <div class="booking-sidebar">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4 class="info-title">Quick Response</h4>
+                            <p class="info-text">We respond to all requests within 24 hours, often much sooner.</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <h4 class="info-title">Need Immediate Help?</h4>
+                            <p class="info-text">For urgent security needs, call us directly:</p>
+                            <a href="tel:+19174024999" class="info-link">+1 (917) 402-4999</a>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4 class="info-title">Licensed & Insured</h4>
+                            <p class="info-text">All our security personnel are fully licensed, trained, and insured.</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <h4 class="info-title">Flexible Scheduling</h4>
+                            <p class="info-text">We accommodate last-minute requests and provide 24/7 security coverage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">ALLIANCE OPERATIONS</h3>
+                    <p class="footer-text">Expert security solutions with tailored strategies, ensuring your safety and peace of mind.</p>
+                    <div class="footer-social">
+                        <a href="https://x.com/AllianceOPSfl" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/allianceops" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services/uniformed-guards.html">Uniformed Guards</a></li>
+                        <li><a href="services/executive-protection.html">Executive Protection</a></li>
+                        <li><a href="services/vehicle-patrol.html">Vehicle Patrol</a></li>
+                        <li><a href="services/plainclothes.html">Plainclothes Security</a></li>
+                        <li><a href="services/consulting.html">Security Consulting</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Event Security</h4>
+                    <ul class="footer-links">
+                        <li><a href="events/corporate.html">Corporate Events</a></li>
+                        <li><a href="events/weddings.html">Weddings</a></li>
+                        <li><a href="events/concerts.html">Concerts & Festivals</a></li>
+                        <li><a href="events/sporting-events.html">Sporting Events</a></li>
+                        <li><a href="events/vip-events.html">VIP Events</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="booking.html">Request Services</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Alliance Operations. All rights reserved.</p>
+                <p class="footer-credit">Designed and Guarded by <a href="https://www.sentinelowl.org/web-dev" target="_blank" rel="noopener noreferrer" class="sentinel-link">Sentinel Owl</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/booking-form.js"></script>
+</body>
+</html>

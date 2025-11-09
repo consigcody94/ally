@@ -1,0 +1,389 @@
+/* ===========================
+   ALLIANCE OPERATIONS
+   Advanced Animations & Effects
+   =========================== */
+
+/* === SCROLL REVEAL ANIMATIONS === */
+/* Only apply fade animations to non-hero elements */
+section:not(.hero) .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section:not(.hero) .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section:not(.hero) .fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section:not(.hero) .fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+section:not(.hero) .fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section:not(.hero) .fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* === HERO FADE IN === */
+@keyframes heroFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-fade-in {
+    animation: heroFadeIn 1s ease-out forwards;
+    opacity: 1; /* Ensure visibility */
+}
+
+/* === TEXT MATERIALIZATION === */
+@keyframes materialize {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.materialize-text {
+    animation: materialize 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    /* Start visible to prevent flash of hidden content */
+}
+
+.materialize-delay-1 {
+    animation: materialize 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.materialize-delay-2 {
+    animation: materialize 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+.materialize-delay-3 {
+    animation: materialize 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+
+/* === LUXURY GLOW EFFECTS === */
+@keyframes luxury-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(70, 130, 180, 0.3),
+                    0 0 40px rgba(70, 130, 180, 0.2),
+                    0 0 60px rgba(70, 130, 180, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(70, 130, 180, 0.5),
+                    0 0 60px rgba(70, 130, 180, 0.3),
+                    0 0 90px rgba(70, 130, 180, 0.2);
+    }
+}
+
+.luxury-glow {
+    animation: luxury-glow 3s ease-in-out infinite;
+}
+
+/* === PREMIUM SHIMMER === */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.shimmer-text {
+    background: linear-gradient(
+        90deg,
+        #FFFFFF 0%,
+        #4682B4 25%,
+        #FFFFFF 50%,
+        #4682B4 75%,
+        #FFFFFF 100%
+    );
+    background-size: 1000px 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+}
+
+/* === ELITE UNDERLINE ANIMATION === */
+.elite-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.elite-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #4682B4, #5F9EA0);
+    transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.elite-underline.visible::after {
+    width: 100%;
+}
+
+/* === CARD HOVER LUXURY === */
+.luxury-card {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+}
+
+.luxury-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(70, 130, 180, 0.1),
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.luxury-card:hover::before {
+    left: 100%;
+}
+
+.luxury-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(70, 130, 180, 0.3),
+                0 0 40px rgba(70, 130, 180, 0.2);
+}
+
+/* === FLOATING ANIMATION === */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.float-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* === TACTICAL SCAN LINE === */
+@keyframes scan {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+.scan-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.scan-effect::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #4682B4, transparent);
+    animation: scan 3s linear infinite;
+    opacity: 0.5;
+}
+
+/* === PREMIUM BUTTON EFFECTS === */
+.btn-premium {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #4682B4 0%, #2F4F6F 100%);
+    box-shadow: 0 10px 30px rgba(70, 130, 180, 0.3);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn-premium::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-premium:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-premium:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(70, 130, 180, 0.5);
+}
+
+/* === TEXT TYPING EFFECT === */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.typing-effect {
+    overflow: hidden;
+    border-right: 3px solid #4682B4;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40) 1s forwards,
+               blink 0.75s step-end infinite;
+}
+
+/* === PARALLAX SCROLL === */
+.parallax-slow {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* === STAGGER CHILDREN ANIMATION === */
+.stagger-container > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.stagger-container.visible > *:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.stagger-container.visible > *:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.stagger-container.visible > *:nth-child(3) {
+    transition-delay: 0.3s;
+}
+.stagger-container.visible > *:nth-child(4) {
+    transition-delay: 0.4s;
+}
+.stagger-container.visible > *:nth-child(5) {
+    transition-delay: 0.5s;
+}
+.stagger-container.visible > *:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+.stagger-container.visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === ELITE BORDER GRADIENT === */
+.border-gradient {
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.border-gradient::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #4682B4, #5F9EA0, #2F4F6F);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.border-gradient:hover::before {
+    opacity: 1;
+}
+
+/* === SMOOTH PAGE TRANSITIONS === */
+.page-transition {
+    animation: fadeInPage 0.8s ease-in-out;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 768px) {
+    .fade-in,
+    .fade-in-left,
+    .fade-in-right {
+        transform: translateY(15px);
+    }
+
+    .luxury-card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+}
+
+/* === PREFERS REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
